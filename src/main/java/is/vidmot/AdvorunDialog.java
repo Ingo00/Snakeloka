@@ -28,7 +28,7 @@ public class AdvorunDialog extends Alert {  // Erfir frá Alert
      * @param haus     hausinn
      * @param spurning spurning sem borin er upp
      */
-    public AdvorunDialog(String titill, String haus, String spurning) {
+        public AdvorunDialog(String titill, String haus, String spurning) {
         super(AlertType.NONE, spurning, BTYPE, HTYPE);  // kallar á smið yfirklasans
         setTitle(titill);
         setHeaderText(haus);

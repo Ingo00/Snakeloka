@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Ebba Þóra Hvannberg Viðmót fyrir snákleik
-Takið eftir SnakurBord sem er sérhæfður viðmótshlutur -->
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.HBox?>
 <?import is.vidmot.SnakurBord?>
