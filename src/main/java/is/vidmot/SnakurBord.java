@@ -10,6 +10,7 @@
 package is.vidmot;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.scene.layout.Pane;
 
@@ -26,6 +27,13 @@ public class SnakurBord extends Pane {
     private static final Random random = new Random();
 
    // tilviksbreytur
+   public class MyObserver implements ListObserver<Faeda> {
+       @Override
+       public void onListChanged(ObservableList<Faeda> list) {
+           System.out.println("List has changed!");
+       }
+   }
+
     private final ObservableList<Faeda> matur = FXCollections.observableArrayList();    // maturinn
     private final ObservableList<EiturSnakur> eiturSnakar = FXCollections.observableArrayList();//eitursnákar
     private Snakur snakur;    // snákurinn
@@ -185,7 +193,13 @@ public class SnakurBord extends Pane {
         }
         eiturSnakar.clear();
     }
-
+    /*
+    private void registerObservers() {
+        MyObserver myObserver = new MyObserver();
+        matur.addListener((ListChangeListener<Faeda>) change -> myObserver.onListChanged(matur));
+        eiturSnakar.addListener((ListChangeListener<EiturSnakur>) change -> myObserver.onListChanged(eiturSnakar));
+    }
+*/
 
 }
 

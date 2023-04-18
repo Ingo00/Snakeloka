@@ -33,16 +33,18 @@ public class EiturSnakur extends Rectangle {
 
     /**
      * Setja eitursnák á borð b á random stað
+     *
      * @param b leikjaborð
      */
-    public void setjaABord (SnakurBord b) {
+    public void setjaABord(SnakurBord b) {
         setX(random.nextInt((int) (b.getWidth() - getWidth())));
-        setY(random.nextInt((int)( b.getHeight() - getHeight())));
+        setY(random.nextInt((int) (b.getHeight() - getHeight())));
         b.getChildren().add(this);
     }
 
     /**
      * Lesa inn útlit úr fxml skrá
+     *
      * @param fxmlSkra nafn á fxml skrá
      */
     protected void lesa(String fxmlSkra) {
@@ -62,7 +64,12 @@ public class EiturSnakur extends Rectangle {
      */
     public void afram() {
         SnakurBord p = (SnakurBord) this.getParent();
-       setX((int)(getX() + p.getWidth() + (int) Math.cos(Math.toRadians(getRotate())) * OFFSET) % (int)p.getWidth());
-       setY((int)(getY() + p.getHeight() - (int) Math.sin(Math.toRadians(getRotate())) * OFFSET) % (int)p.getHeight());
+        setX((int) (getX() + p.getWidth() + (int) Math.cos(Math.toRadians(getRotate())) * OFFSET) % (int) p.getWidth());
+        setY((int) (getY() + p.getHeight() - (int) Math.sin(Math.toRadians(getRotate())) * OFFSET) % (int) p.getHeight());
     }
+/*
+    public String getName() {
+    }
+
+ */
 }
